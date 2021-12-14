@@ -1,0 +1,96 @@
+-------------------------------------------------------
+SERVER
+-------------------------------------------------------
+create phpmyadmin resource
+
+CLI request:
+
+curl -X POST http://192.168.1.5:32111/pmas \
+    -H "Content-Type: application/json" \
+    -d '{"username": "zahra"}'
+
+hasil:
+{
+  "info": {
+    "mysql_port": 20901,
+    "phpmyadmin_port": 12668,
+    "username": "zahra"
+  },
+  "status": "OK"
+}
+
+-------------------------------------------------------
+get info by username
+
+CLI request:
+
+curl -X GET http://192.168.1.5:32111/pma/zahra
+
+hasil:
+{
+  "info": {
+    "mysql_port": 20901,
+    "phpmyadmin_port": 12668,
+    "username": "zahra"
+  },
+  "status": "OK"
+}
+
+-------------------------------------------------------
+delete by username
+
+CLI request:
+
+curl -X DELETE http://192.168.1.5:32111/pma/zahra
+
+hasil:
+{
+  "status": "OK"
+}
+-------------------------------------------------------
+DOCKER
+-------------------------------------------------------
+create phpmyadmin resource
+
+CLI request:
+
+curl -X POST http://172.17.0.2:32111/pmas \
+    -H "Content-Type: application/json" \
+    -d '{"username": "hipzi"}'
+
+hasil:
+{
+  "info": {
+    "mysql_port": 21069, 
+    "phpmyadmin_port": 22204, 
+    "username": "hipzi"
+  }, 
+  "status": "OK"
+}
+-------------------------------------------------------
+get info by username
+
+CLI request:
+
+curl -X GET http://172.17.0.2:32111/pma/hipzi
+
+hasil:
+{
+  "info": {
+    "mysql_port": 21069, 
+    "phpmyadmin_port": 22204, 
+    "username": "hipzi"
+  }, 
+  "status": "OK"
+}
+-------------------------------------------------------
+delete by username
+
+CLI request:
+
+curl -X DELETE http://172.17.0.2:32111/pma/hipzi
+
+hasil:
+{
+  "status": "OK"
+}
